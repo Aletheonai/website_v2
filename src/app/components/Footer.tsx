@@ -16,13 +16,13 @@ export function Footer() {
             </p>
             <div className="flex gap-3 items-center">
               <a
-                href="mailto:contact@aletheon.ai"
+                href="mailto:info@aletheon.ai"
                 className="w-10 h-10 rounded-lg bg-white hover:bg-gray-100 transition-colors flex items-center justify-center"
                 aria-label="Email Aletheon"
               >
                 <Mail className="w-5 h-5 text-[var(--brand-primary)]" />
               </a>
-              <span className="text-sm text-gray-700">contact@aletheon.ai</span>
+              <span className="text-sm text-gray-700">info@aletheon.ai</span>
             </div>
           </div>
 
@@ -76,8 +76,8 @@ export function Footer() {
             <h3 className="font-bold text-lg mb-4">Contact</h3>
             <ul className="space-y-3 text-gray-700 text-sm">
               <li>
-                <a href="mailto:contact@aletheon.ai" className="hover:text-[var(--brand-primary)] transition-colors">
-                  contact@aletheon.ai
+                <a href="mailto:info@aletheon.ai" className="hover:text-[var(--brand-primary)] transition-colors">
+                  info@aletheon.ai
                 </a>
               </li>
               <li>Global Services</li>

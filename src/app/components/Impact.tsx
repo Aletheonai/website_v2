@@ -1,4 +1,4 @@
-import { TrendingUp, DollarSign, CheckCircle, Zap } from 'lucide-react';
+import { TrendingUp, DollarSign, Zap, Layers, Headphones, BarChart3 } from 'lucide-react';
 import { useEffect, useRef, useState } from 'react';
 import { animate, motion, useInView } from 'motion/react';
 
@@ -22,13 +22,6 @@ const stats = [
     value: 15,
     suffix: '%',
     label: 'Improvement in delivery quality',
-    color: 'var(--brand-primary)'
-  },
-  {
-    icon: CheckCircle,
-    value: 98,
-    suffix: '%',
-    label: 'Client satisfaction rate',
     color: 'var(--brand-primary)'
   }
 ];
@@ -55,28 +48,6 @@ function AnimatedCounter({ target, suffix }: { target: number; suffix: string })
   );
 }
 
-function AnimatedMetric({ label, value, color }: { label: string; value: number; color: string }) {
-  const ref = useRef<HTMLDivElement | null>(null);
-  const inView = useInView(ref, { once: true, amount: 0.5 });
-  return (
-    <div ref={ref}>
-      <div className="flex justify-between mb-2">
-        <span className="font-semibold text-gray-900">{label}</span>
-        <span className="font-bold" style={{ color }}>{value}%</span>
-      </div>
-      <div className="w-full h-2 bg-gray-200 rounded-full overflow-hidden">
-        <motion.div
-          className="h-full rounded-full"
-          style={{ backgroundColor: color }}
-          initial={{ width: 0 }}
-          animate={{ width: inView ? `${value}%` : 0 }}
-          transition={{ duration: 1, ease: 'easeOut' }}
-        />
-      </div>
-    </div>
-  );
-}
-
 export function Impact() {
   return (
     <section id="impact" className="py-24 relative overflow-hidden bg-[rgba(var(--brand-primary-rgb),0.03)]">
@@ -96,7 +67,7 @@ export function Impact() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
           {stats.map((stat, index) => {
             const Icon = stat.icon;
             return (
@@ -122,43 +93,49 @@ export function Impact() {
           })}
         </div>
 
-        <div className="bg-gray-50 rounded-2xl p-12 border border-gray-200">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div>
-              <h3 className="text-3xl font-bold mb-6 text-gray-900">
-                Transforming Industries with AI
-              </h3>
-              <p className="text-gray-600 mb-8 leading-relaxed">
-                Our clients see measurable improvements across all key metrics. From streamlining operations to enhancing decision-making capabilities, AI integration delivers tangible business value.
-              </p>
-              <ul className="space-y-4">
-                {[
-                  { title: 'Proven Methodology', desc: 'Tested frameworks across multiple industries' },
-                  { title: 'Continuous Support', desc: 'Ongoing guidance throughout your AI journey' },
-                  { title: 'Measurable ROI', desc: 'Clear metrics and KPIs to track success' },
-                ].map((item, idx) => (
-                  <li key={idx} className="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 text-[var(--brand-secondary)] flex-shrink-0 mt-0.5" />
-                    <div>
-                      <div className="font-semibold mb-1 text-gray-900">{item.title}</div>
-                      <div className="text-sm text-gray-600">{item.desc}</div>
-                    </div>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div className="bg-white rounded-xl p-8 border border-gray-200">
-              <div className="space-y-6">
-                {[
-                  { label: 'Productivity Gains', value: 85, color: 'var(--brand-primary)' },
-                  { label: 'Cost Efficiency', value: 92, color: 'var(--brand-secondary)' },
-                  { label: 'Time Savings', value: 78, color: 'var(--brand-accent)' },
-                ].map((metric, idx) => (
-                  <AnimatedMetric key={idx} label={metric.label} value={metric.value} color={metric.color} />
-                ))}
-              </div>
-            </div>
-          </div>
+        <motion.div
+          className="text-center mb-12"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.4 }}
+          transition={{ duration: 0.45 }}
+        >
+          <h3 className="text-3xl font-bold mb-4 text-gray-900">
+            Transforming Industries with AI
+          </h3>
+          <p className="text-gray-600 max-w-2xl mx-auto leading-relaxed">
+            Our clients see measurable improvements across all key metrics. From streamlining operations to enhancing decision-making capabilities, AI integration delivers tangible business value.
+          </p>
+        </motion.div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {[
+            { icon: Layers, title: 'Proven Methodology', desc: 'Tested frameworks across multiple industries', color: 'var(--brand-primary)' },
+            { icon: Headphones, title: 'Continuous Support', desc: 'Ongoing guidance throughout your AI journey', color: 'var(--brand-secondary)' },
+            { icon: BarChart3, title: 'Measurable ROI', desc: 'Clear metrics and KPIs to track success', color: 'var(--brand-primary)' },
+          ].map((item, index) => {
+            const Icon = item.icon;
+            return (
+              <motion.div
+                key={item.title}
+                className="bg-white rounded-xl p-8 border border-gray-200 text-center hover:border-[rgba(var(--brand-primary-rgb),0.3)] hover:shadow-md transition-all"
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.25 }}
+                transition={{ duration: 0.35, delay: index * 0.08 }}
+              >
+                <div className="w-12 h-12 rounded-lg mb-6 flex items-center justify-center mx-auto bg-[rgba(var(--brand-primary-rgb),0.12)]">
+                  <Icon className="w-6 h-6" style={{ color: item.color }} />
+                </div>
+                <h4 className="text-xl font-bold mb-3 text-gray-900">
+                  {item.title}
+                </h4>
+                <p className="text-gray-600 text-sm leading-relaxed">
+                  {item.desc}
+                </p>
+              </motion.div>
+            );
+          })}
         </div>
       </div>
     </section>

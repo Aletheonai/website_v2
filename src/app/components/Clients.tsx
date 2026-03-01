@@ -51,26 +51,6 @@ export function Clients() {
             ))}
           </div>
         </div>
-
-        <div className="bg-gray-50 rounded-2xl p-12 border border-gray-200">
-          <div className="grid md:grid-cols-3 gap-12 text-center">
-            <div>
-              <div className="text-5xl font-bold mb-3 text-[var(--brand-primary)]">50+</div>
-              <div className="text-gray-900 font-semibold text-lg mb-1">Projects Delivered</div>
-              <div className="text-gray-500 text-sm">Across multiple industries</div>
-            </div>
-            <div>
-              <div className="text-5xl font-bold mb-3 text-[var(--brand-secondary)]">95%</div>
-              <div className="text-gray-900 font-semibold text-lg mb-1">Client Retention</div>
-              <div className="text-gray-500 text-sm">Long-term partnerships</div>
-            </div>
-            <div>
-              <div className="text-5xl font-bold mb-3 text-[var(--brand-primary)]">12+</div>
-              <div className="text-gray-900 font-semibold text-lg mb-1">Industries Served</div>
-              <div className="text-gray-500 text-sm">Diverse expertise</div>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
   );

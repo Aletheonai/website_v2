@@ -52,8 +52,15 @@ export function Contact() {
       );
       toast.success('Message sent successfully. We will get back to you soon.');
       setFormData({ name: '', email: '', company: '', message: '' });
-    } catch {
-      toast.error('Message failed to send. Please try again in a moment.');
+    } catch (err) {
+      const error = err as { status?: number; text?: string };
+      console.error('EmailJS error:', error);
+      const msg = error.status === 401
+        ? 'Invalid EmailJS configuration. Check your Service ID, Template ID, and Public Key in .env.local'
+        : error.status === 403
+          ? 'EmailJS blocked this request. Add localhost to allowed referrers in your EmailJS dashboard.'
+          : error.text || 'Message failed to send. Please try again in a moment.';
+      toast.error(msg);
     } finally {
       setIsSubmitting(false);
     }
@@ -175,8 +182,8 @@ export function Contact() {
                   </div>
                   <div>
                     <div className="font-bold mb-1 text-gray-900">Email</div>
-                    <a href="mailto:contact@aletheon.ai" className="text-gray-600 hover:text-[var(--brand-primary)] transition-colors">
-                      contact@aletheon.ai
+                    <a href="mailto:info@aletheon.ai" className="text-gray-600 hover:text-[var(--brand-primary)] transition-colors">
+                      info@aletheon.ai
                     </a>
                   </div>
                 </div>

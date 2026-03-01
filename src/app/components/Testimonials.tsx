@@ -4,21 +4,21 @@ import { motion } from 'motion/react';
 const testimonials = [
   {
     quote:
-      'Aletheon helped us move from AI curiosity to a practical roadmap in just a few weeks. Their approach was clear, strategic, and measurable.',
-    name: 'Operations Director',
-    company: 'Regional Logistics Group',
+      'We attended the Generative AI and Data Analysis training. Thank you, Aletheon, for these three amazing days! We truly delved into AI and gained numerous practical insights. The interaction and passion you brought to the sessions were both memorable and highly beneficial. In a time where everything is driven by AI, this training is truly a must.',
+    name: 'L&D Director',
+    company: 'Café Najjar',
   },
   {
     quote:
-      'The leadership training sessions aligned our executive team and gave us confidence to prioritize the right AI opportunities across departments.',
-    name: 'Chief Strategy Officer',
-    company: 'Consumer Goods Company',
+      'Today, e-world beams with pride as we wrap up Prompt Engineering for AI training for our esteemed client, CMA CGM. Under the expert guidance of Aletheon, participants displayed unmatched zeal, commitment, and an insatiable curiosity. To all our stellar students: Your AI journey is just taking off! With the vast universe of prompt engineering ahead. Stay ignited, keep the questions coming, and forge ahead in the AI frontier!',
+    name: 'Chief Executive Officer',
+    company: 'e-world',
   },
   {
     quote:
-      'Their team translated complex AI concepts into concrete business actions. We improved delivery speed and decision quality almost immediately.',
-    name: 'General Manager',
-    company: 'Travel & Services Enterprise',
+      'Unlocking Achievement: Prompt Engineering Certification feat. Aletheon With great enthusiasm, I share the successful completion of the Prompt Engineering for AI certification, guided by Aletheon. Standing as one of the pioneers in Lebanon to attain this accolade fills me with immense pride. Under Aletheon\'s mentorship, I\'ve cultivated a deep understanding of AI and chatbot technologies, positioning myself to drive innovation and shape the AI landscape.',
+    name: 'Senior Data  Engineer',
+    company: 'CMA CGM',
   },
 ];
 
