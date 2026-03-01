@@ -8,14 +8,14 @@ const stats = [
     value: 40,
     suffix: '%',
     label: 'Faster workflows',
-    color: 'var(--brand-secondary)'
+    color: 'var(--brand-primary)'
   },
   {
     icon: DollarSign,
     value: 25,
     suffix: 'x',
     label: 'Reduction in operational costs',
-    color: 'var(--brand-secondary)'
+    color: 'var(--brand-primary)'
   },
   {
     icon: TrendingUp,
@@ -111,7 +111,7 @@ export function Impact() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {[
             { icon: Layers, title: 'Proven Methodology', desc: 'Tested frameworks across multiple industries', color: 'var(--brand-primary)' },
-            { icon: Headphones, title: 'Continuous Support', desc: 'Ongoing guidance throughout your AI journey', color: 'var(--brand-secondary)' },
+            { icon: Headphones, title: 'Continuous Support', desc: 'Ongoing guidance throughout your AI journey', color: 'var(--brand-primary)' },
             { icon: BarChart3, title: 'Measurable ROI', desc: 'Clear metrics and KPIs to track success', color: 'var(--brand-primary)' },
           ].map((item, index) => {
             const Icon = item.icon;

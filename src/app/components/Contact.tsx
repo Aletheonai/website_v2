@@ -171,8 +171,8 @@ export function Contact() {
             <p className="text-xs text-gray-400 mt-4 text-center">We usually reply within one business day.</p>
           </div>
 
-          {/* Contact Information */}
-          <div className="space-y-6">
+          {/* Contact Information + Why Choose */}
+          <div className="flex flex-col gap-6 md:min-h-0">
             <div className="bg-white rounded-2xl p-10 border border-gray-200">
               <h3 className="text-2xl font-bold mb-8 text-gray-900">Contact Information</h3>
               <div className="space-y-6">
@@ -213,8 +213,8 @@ export function Contact() {
               </div>
             </div>
 
-            {/* Why Choose */}
-            <div className="bg-[var(--brand-primary)] rounded-2xl p-10 text-white">
+            {/* Why Choose - pushed down to align with form card */}
+            <div className="bg-[var(--brand-primary)] rounded-2xl p-10 text-white mt-auto">
               <h3 className="text-2xl font-bold mb-6">Why Choose Aletheon?</h3>
               <ul className="space-y-4">
                 {[
