@@ -42,6 +42,37 @@ npm run build
 npm run preview
 ```
 
+## Deploy to GitHub Pages
+
+### 1) Add repository secrets
+
+In your GitHub repo: **Settings → Secrets and variables → Actions → New repository secret**
+
+Add these three secrets (use the same values as in `.env.local`):
+
+| Secret name | Value |
+|-------------|-------|
+| `VITE_EMAILJS_SERVICE_ID` | Your EmailJS Service ID |
+| `VITE_EMAILJS_TEMPLATE_ID` | Your EmailJS Template ID |
+| `VITE_EMAILJS_PUBLIC_KEY` | Your EmailJS Public Key |
+
+### 2) Enable GitHub Pages
+
+**Settings → Pages → Build and deployment**
+
+- **Source:** GitHub Actions
+
+### 3) Push to main
+
+Push your code to the `main` branch. The workflow will build and deploy automatically. Your site will be live at:
+
+- **Project site:** `https://<username>.github.io/Aletheon-website-v2/`
+- **User/org site:** If your repo is `username.github.io`, update `vite.config.ts` to use `base: '/'` instead of the project path.
+
+### 4) EmailJS for production
+
+In your EmailJS dashboard, add your GitHub Pages URL to **allowed referrers** (e.g. `https://yourusername.github.io` or `https://yourusername.github.io/Aletheon-website-v2`).
+
 ## 🚀 Features
 
 - **Modern Design**: Clean, professional design with gradient accents
